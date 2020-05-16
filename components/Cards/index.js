@@ -21,19 +21,39 @@
 function newCardMaker(){
 
 
-    //Elements
-    const newCard = document.createElement('div')
-    const newHead = document.createElement('div')
-    const newAuthor = document.createElement('div')
-    const newImg = document.createElement('img')
-    const authorsName = document.createElement('span')
+	// Elements
+    const newCard = document.createElement("div");
+    const header = document.createElement("div");
+    const imageContainer = document.createElement("div");
+    const newImg = document.createElement("img");
+    const newAuthor = document.createElement("span");
+  
+  
+      //text content
+    header.textContent = "headline";
+    newAuthor.textContent = "authorName";
+    newImg.src = "imgSrc";
+      
+      //classes
+    newCard.classList.add("card");
+    header.classList.add("headline");
+    imageContainer.classList.add("img-container");
+  
+  
+  
+  
 
-    //text content
+    newCard.appendChild(header);
+    newCard.appendChild(imageContainer);
+    newCard.appendChild(newImg);
+    newCard.appendChild(newAuthor);
 
-    newHead.textContent = headline; 
-    newHead.textContent = headline; 
-    newHead.textContent = headline; 
 
-
+    return newCard
+   
 
 }
+
+.catch(err => {
+    console.log(err);
+});
