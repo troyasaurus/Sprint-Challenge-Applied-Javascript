@@ -18,3 +18,61 @@
 // </div>
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
+function newCardMaker(data){
+
+
+	// Elements
+    const newCard = document.createElement("div");
+    const header = document.createElement("div");
+    const author = document.createElement("div")
+    const imageContainer = document.createElement("div");
+    const newImg = document.createElement("img");
+    const newAuthor = document.createElement("span");
+  
+  
+      //text content
+    header.textContent = data.headline;
+    newAuthor.textContent = data.authorName;
+    newImg.src = data.authorPhoto;
+      
+      //classes
+    newCard.classList.add("card");
+    header.classList.add("headline");
+    imageContainer.classList.add("img-container");
+    author.classList.add('author');
+
+  
+  
+  
+  
+
+    newCard.appendChild(header);
+    newCard.appendChild(author);
+    author.appendChild(imageContainer);
+    imageContainer.appendChild(newImg);
+    author.appendChild(newAuthor)
+
+    return newCard
+   
+
+}
+const newEntry = document.querySelector('.cards-container')
+
+
+axios
+  .get("https://lambda-times-backend.herokuapp.com/articles")
+  .then(response => {
+    console.log(response.data.articles);
+    for (let x in response.data.articles) {
+      console.log(x);
+      for (let i = 0; i < response.data.articles[x].length; i++) {
+        // Do whatever you need to
+        const newCard = newCardMaker(response.data.articles[x][i]);
+        console.log(response.data.articles[x][i]);
+        newEntry.appendChild(newCard);
+      }
+    }
+  })
+  .catch(err => {
+    console.log(err);
+  });
