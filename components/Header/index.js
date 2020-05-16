@@ -20,7 +20,7 @@ function Header() {
     const temp =  document.createElement('span');
 
     //text content
-    date.textContent = 'SMARCH 28, 2019';
+    date.textContent = 'MARCH 28, 2019';
     headerText.textContent = 'Lambda Times';
     temp.textContent = '98°';
 

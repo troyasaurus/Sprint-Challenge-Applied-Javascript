@@ -18,3 +18,22 @@
 // </div>
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
+function newCardMaker(){
+
+
+    //Elements
+    const newCard = document.createElement('div')
+    const newHead = document.createElement('div')
+    const newAuthor = document.createElement('div')
+    const newImg = document.createElement('img')
+    const authorsName = document.createElement('span')
+
+    //text content
+
+    newHead.textContent = headline; 
+    newHead.textContent = headline; 
+    newHead.textContent = headline; 
+
+
+
+}
