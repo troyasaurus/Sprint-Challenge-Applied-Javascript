@@ -63,12 +63,12 @@ axios
   .get("https://lambda-times-backend.herokuapp.com/articles")
   .then(response => {
     console.log(response.data.articles);
-    for (let key in response.data.articles) {
-      console.log(key);
-      for (let i = 0; i < response.data.articles[key].length; i++) {
+    for (let x in response.data.articles) {
+      console.log(x);
+      for (let i = 0; i < response.data.articles[x].length; i++) {
         // Do whatever you need to
-        const newCard = newCardMaker(response.data.articles[key][i]);
-        console.log(response.data.articles[key][i]);
+        const newCard = newCardMaker(response.data.articles[x][i]);
+        console.log(response.data.articles[x][i]);
         newEntry.appendChild(newCard);
       }
     }
